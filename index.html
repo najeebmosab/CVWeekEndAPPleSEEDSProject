@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/fontawesome.min.css"
+        integrity="sha512-giQeaPns4lQTBMRpOOHsYnGw1tGVzbAIHUyHRgn7+6FmiEgGGjaG0T2LZJmAPMzRCl+Cug0ItQ2xDZpTmEc+CQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a onclick="toScroll(-2000)">Logo</a>
+            </div>
+            <div class="menu-warp">
+                <input onclick="myFunction()" type="checkbox" class="toggler">
+                <div class="humbrgar">
+                    <div></div>
+                </div>
+            </div>
+
+            <div class="Menu close">
+
+                <a onclick="toScroll(-2000)">Home</a>
+                <a onclick="toScroll(500)">About</a>
+                <a onclick="toScroll(1500)">My Work</a>
+                <a href="#contact">Contact Me</a>
+
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="bg-img" id="home">
+            <div id="summary">
+                <h2>Hi</h2>
+                <p>my name is mousab abo najeeb i'm a junior full stack developer by:angular,asp.net web api,sql server
+                </p>
+                <a onclick="toScroll(500)">About Me</a>
+            </div>
+            <a onclick="toScroll(500)" class="arrowDown">
+                <i class="fa-solid fa-caret-down"></i>
+            </a>
+        </section>
+        <section id="about">
+            <div>
+                <h2 class="h2about">About Me</h2>
+            </div>
+            <div class="description">
+                <div class="intro">
+                    <h2>Let me introduce myself.</h2>
+                    <p>I learned Software engineer at Ort College in Jerusalem from 2019 to 2021. </p>
+                </div>
+                <div class="container">
+
+                    <div class="profile">
+                        <div>
+                            <h2>PROFILE</h2>
+                            <p>FullStack developer</p>
+                        </div>
+                        <div>
+                            <h2>FULLNAME:</h2>
+                            <p>mousab abo najeeb</p>
+                        </div>
+                        <div>
+                            <h2>BIRTH DATE:</h2>
+                            <p>1/3/1999</p>
+                        </div>
+                        <div>
+                            <h2>JOB:</h2>
+                            <p>Frontend and backend Developer</p>
+                        </div>
+                        <div>
+                            <h2>WEBSITE:</h2>
+                            <p><a href="https://www.linkedin.com/in/mosab-najeeb/"><i
+                                        class="fa-brands fa-linkedin"></i></a></p>
+                        </div>
+                        <div>
+                            <h2>EMAIL:</h2>
+                            <p>najeebmosab@gmail.com</p>
+                        </div>
+                    </div>
+
+
+                    <div class="skills">
+                        <h2>skills</h2>
+                        <p>my skills at FullStack developer</p>
+                        <div class="toHTML toMod">
+                            <h2>HTML</h2>
+                            <div>
+                                90%
+                            </div>
+                        </div>
+
+                        <div class="toCSS toMod">
+                            <h2>CSS</h2>
+                            <div>
+                                85%
+                            </div>
+                        </div>
+
+                        <div class="toJS toMod">
+                            <h2>JS</h2>
+                            <div>
+                                90%
+                            </div>
+                        </div>
+
+                        <div class="toAngular toMod">
+                            <h2>Angular</h2>
+                            <div>
+                                80%
+                            </div>
+                        </div>
+
+                        <div class="toSQL toMod">
+                            <h2>SQL</h2>
+                            <div>
+                                85%
+                            </div>
+                        </div>
+
+                                            
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="myWork">
+            <div class="my-work">
+                <div class="cards">
+                    <img src="./images/Model-3-Main-Hero-Desktop-LHD.jfif" alt="">
+                    <h4>Demo Tesla website</h4>
+                    <a href="https://gleeful-figolla-b35cc0.netlify.app">Live Site</a >
+                </div>
+                <div class="cards">
+                    <img src="./images/showcase2.jpg" alt="">
+                    <h4>Demo Hotel website</h4>
+                    <a href="https://cool-rolypoly-e00e02.netlify.app">Live Site</a >
+                </div>
+                <div class="cards">
+                    <img src="./images/showcase.jpg" alt="">
+                    <h4>Demo Edgeledger website</h4>
+                    <a href="https://fantastic-dodol-e66c5a.netlify.app">Live Site</a >
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <section id="contact">
+            <div>
+                <i class="fa-regular fa-copyright"></i>
+                <h6>Mousab Abo Najeeb</h6>
+            </div>
+            <div>
+                <a href=""><i class="fa-brands fa-linkedin"></i></a>
+                <a href=""><i class="fa-brands fa-github"></i></a>
+            </div>
+        </section>
+    </footer>
+
+</body>
+<script>
+    function myFunction() {
+        let input = document.getElementsByClassName('toggler').item(0).checked;
+        let menu = document.getElementsByClassName('Menu').item(0);
+        console.log(input);
+        if (input) {
+            menu.classList.add('open');
+            menu.classList.remove('close');
+        }
+        else {
+            menu.classList.remove('open');
+            menu.classList.add('close');
+
+        }
+    }
+
+    function toScroll(par) {
+        window.scroll({
+            top: par,
+            left: 0,
+            behavior: 'smooth'
+        });
+    }
+
+
+</script>
+
+</html>

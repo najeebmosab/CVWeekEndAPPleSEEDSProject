@@ -1,0 +1,479 @@
+* {
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+}
+
+:root {
+    --main-color: #cc005f;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+header nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px 20px;
+    position: relative;
+    overflow: hidden;
+    position: fixed;
+    z-index: 10;
+    width: 100%;
+    animation: hid 2s linear;
+}
+
+.logo {
+    z-index: 1;
+
+}
+
+.logo a {
+    color: var(--main-color) !important;
+}
+
+header nav div:nth-child(2) {
+    display: none;
+}
+
+header nav div a {
+    text-decoration: none;
+    padding: 10px;
+    color: #fff;
+    position: relative;
+}
+
+header nav div a::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 100%;
+    border-bottom: 2px solid var(--main-color);
+    bottom: 0;
+    right: 0;
+    opacity: 0;
+}
+
+header nav div a::before {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 100%;
+    border-top: 2px solid var(--main-color);
+    top: 0;
+    left: 0;
+    opacity: 0;
+}
+
+header nav div a:hover::after,
+header nav div a:hover::before {
+    width: 100%;
+    opacity: 1;
+    transition: width 1.5s, opacity 1s;
+}
+
+
+@media (Max-width:800px) {
+    header nav{
+        overflow: hidden;
+    }
+    header nav div:nth-child(2) {
+        display: block;
+        transition: display 2s ease-in;
+    }
+
+    .Menu {
+        z-index: 9;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background-color: rgba(255, 255, 255, 0.7);
+        text-align: center;
+        transition: all 0.4s ease;
+
+    }
+
+    .open {
+        visibility: visible;
+        transform: scale(1);
+    }
+
+    .close {
+        transform: scale(0);
+        visibility: hidden;
+    }
+
+    .open a {
+        opacity: 1;
+        font-weight: 700;
+        color: #000;
+        transition: opacity 0.4s ease;
+    }
+
+    .open a:hover {
+        opacity: 1;
+        font-weight: 900;
+    }
+
+}
+
+.menu-warp {
+    z-index: 10;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40px;
+    height: 40px;
+}
+
+.menu-warp .toggler {
+    z-index: 11;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.menu-warp .humbrgar {
+    width: 40px;
+    height: 40px;
+    background-color: rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.menu-warp .humbrgar>div {
+    position: relative;
+    flex: none;
+    width: 100%;
+    height: 2px;
+    background: var(--main-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 1.4s ease;
+}
+
+.menu-warp .humbrgar>div::after,
+.menu-warp .humbrgar>div::before {
+    content: '';
+    position: absolute;
+    z-index: 11;
+    top: -10px;
+    width: 100%;
+    right: 0;
+    height: 2px;
+    background: var(--main-color);
+}
+
+.menu-warp .humbrgar>div::before {
+    top: 10px;
+
+}
+
+
+/* Start turn a line to x*/
+
+.toggler:checked+.humbrgar>div {
+    transform: rotate(135deg);
+}
+
+.toggler:checked+.humbrgar>div::after,
+.toggler:checked+.humbrgar>div::before {
+    top: 0;
+    transform: rotate(90deg);
+}
+
+.toggler:hover+.humbrgar>div {
+    transform: rotate(225deg);
+}
+
+/* End style for navbar */
+
+/* Strt style for head */
+.bg-img {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url(https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&w=600);
+    object-fit: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.bg-img::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+
+}
+
+#summary {
+    position: absolute;
+    z-index: 2;
+    text-align: center;
+    color: #fff;
+    font-weight: 700;
+    line-height: 2.4rem;
+    animation: hid 3s ease-in;
+}
+
+@keyframes hid {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+
+}
+
+
+#summary a {
+    border: #fff solid 1px;
+    padding: 10px;
+}
+
+#summary a:hover {
+    background-color: #000;
+}
+
+.arrowDown {
+    position: absolute;
+    bottom: 20px;
+    z-index: 2;
+    cursor: pointer;
+    animation: upDown 1s infinite linear, hid 3s linear;
+}
+
+@keyframes upDown {
+    0% {
+        bottom: 20px;
+    }
+
+    100% {
+        bottom: 15px;
+    }
+}
+
+/* End style for head */
+
+
+/* Start style for about */
+#about .h2about {
+    position: relative;
+    width: 200px;
+    margin: 10px auto;
+    text-align: center;
+    color: #313131;
+}
+
+#about .h2about::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50px;
+    border-bottom: 2px solid #ff0077;
+    width: 50%;
+}
+
+.description {
+    width: 100%;
+}
+
+.description .intro h2 {
+    font-size: 30px;
+    width: 400px;
+    margin: 10px auto;
+    text-align: center;
+}
+
+.description .intro p {
+    margin: 0px auto;
+    text-align: center;
+    font-size: 20px;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 20px 0px;
+}
+
+.container .profile {
+    width: 300px;
+}
+
+.container .skills {
+    width: 300px;
+}
+
+.container .profile div {
+    margin: 20px 20px;
+}
+
+.container .profile p a {
+    color: #183153;
+    justify-self: flex-end;
+}
+
+.container .skills .toMod {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    padding: 20px 0px;
+}
+
+.container .skills .toMod div {
+    background-color: #313131;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.container .skills .toMod::after,
+.container .skills .toMod::before {
+    position: absolute;
+    content: '';
+    width: 100%;
+    border-bottom: 10px solid #a1a1a1;
+    bottom: 0;
+    left: 0;
+}
+
+.container .skills .toHTML::before {
+    width: 90%;
+    border-bottom: 10px solid #313131;
+    z-index: 1;
+}
+
+.container .skills .toJS::before{
+    width: 90%;
+    border-bottom: 10px solid #313131;
+    z-index: 1;
+}
+
+.container .skills .toCSS::before {
+    width: 85%;
+    border-bottom: 10px solid #313131;
+    z-index: 1;
+}
+
+.container .skills .toAngular::before {
+    width: 80%;
+    border-bottom: 10px solid #313131;
+    z-index: 1;
+}
+
+.container .skills .toSQL::before{
+    width: 85%;
+    border-bottom: 10px solid #313131;
+    z-index: 1;
+}
+
+@media (max-width:720px) {
+    .container{
+        text-align: center;
+    }
+}
+/* End style for about */
+
+/* Start style for my Worke */
+#myWork .my-work {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+}
+
+#myWork .my-work .cards {
+    background-color: #f4f4f4;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    text-align: center;
+    border-radius: 10px;
+    width: 21.25em;
+    margin: 10px 20px;
+    line-height: 2em;
+}
+
+#myWork .my-work .cards img{
+    width: 100%;
+    object-fit: cover;
+    background-position: center center;
+    height: 50vh;
+}
+#myWork .my-work .cards a{
+    color: #ff0077;
+}
+
+@media (max-width:900px) {
+    #myWork .my-work  {
+     flex-wrap: wrap;
+    }
+}
+
+/* End style for my Worke */
+
+footer #contact{
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+footer #contact div{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px ;
+}
+footer #contact div h6{
+    padding: 0px 10px;
+    color: #fff;
+}
+footer #contact div a{
+    padding: 0px 10px;
+}
+
+footer #contact div a:first-child:hover{
+    color: #183153;
+}
+footer #contact div a:last-child:hover{
+    color: lightblue;
+}
